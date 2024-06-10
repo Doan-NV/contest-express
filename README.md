@@ -14,12 +14,13 @@ The API includes user authentication and authorization, data validation, and con
 
 ## Installation
 
-  git clone https://github.com/Doan-NV/contest-express.git
-  cd express
-  cp .env.example .env ==> to run with local 
-  npm install
+  - git clone https://github.com/Doan-NV/contest-express.git
+  - cd express
 
-  // to run with hot reload
-  npm run dev
-  //to run with production
-  npm start
+## Start project
+  - cp .env.example .env
+  - npm install
+  - // to run with hot reload
+  - npm run dev
+  - // to run with production
+  - npm start
