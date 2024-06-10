@@ -2,7 +2,6 @@ const { default: mongoose } = require('mongoose');
 const User = require('../../models/user.model');
 
 const createUser = async (userData) => {
-  console.log('🚀 ~ createUser ~ userData:', userData);
   const user = await User.create(userData);
   return user;
 };

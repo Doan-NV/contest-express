@@ -20,7 +20,6 @@ const register = async (userData) => {
 
 const login = async ({ username, password }) => {
   const user = await userService.findOneByQuery({username});
-  console.log('🚀 ~ login ~ user:', user);
 
   if (!user || !(await bcrypt.compare(password, user.password))) {
     throw new Error('Invalid username or password');

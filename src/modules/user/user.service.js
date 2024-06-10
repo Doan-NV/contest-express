@@ -16,7 +16,6 @@ const getUserByUsername = async (username) => {
 }
 
 const findOneByQuery = async (query) => {
-  console.log('🚀 ~ findOneByQuery ~ username:', query);
   const user = await userRepository.findOneByQuery(query);
   return user;
 }

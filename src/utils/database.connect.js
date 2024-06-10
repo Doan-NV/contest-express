@@ -23,14 +23,24 @@ if (db.db_replica) {
   }
 }
 
-const connectDB = async () => {
-  try {
-    await mongoose.connect(`${urlConnect}`, options);
-    console.log('MongoDB connected successfully');
-  } catch (err) {
-    console.error('MongoDB connection error', err);
-    process.exit(1);
-  }
+const connectDB = () => {
+  mongoose.connection.on('connecting', () => {
+    console.log('connecting to MongoDB...');
+  });
+
+  mongoose.connect(`${urlConnect}`, options);
+
+  mongoose.connection.on('connected', () => {
+    console.log('Connected to MongoDB');
+  });
+
+  mongoose.connection.on('error', (err) => {
+    console.log('Error connecting to MongoDB', err);
+  });
+
+  mongoose.connection.on('disconnected', () => {
+    console.log('Disconnected from MongoDB');
+  });
 };
 
 module.exports = connectDB;

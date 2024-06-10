@@ -42,7 +42,6 @@ const deleteGame = async (req, res, next) => {
   try {
     const { id } = req.params;
     const data = await gameService.deleteGame(id);
-    console.log(data);
     res.status(204).json(data);
   } catch (error) {
     next(error);

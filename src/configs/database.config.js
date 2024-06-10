@@ -13,6 +13,8 @@ const db = {
 };
 const options = {
   useUnifiedTopology: true,
+  connectTimeoutMS: 5000,
+  socketTimeoutMS: 5000,
 };
 
 module.exports = { db, options };
